@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@
     #panorama {
       width: 100%;
       height: 100%;
-      display: none; /* Скрываем по умолчанию */
+      display: none;
     }
     .menu-btn {
       margin: 10px;
@@ -54,7 +54,7 @@
       border-radius: 5px;
       z-index: 1000;
       cursor: pointer;
-      display: none; /* Скрываем по умолчанию */
+      display: none;
     }
     #back-btn:hover {
       background: #555;
@@ -65,8 +65,10 @@
   <!-- Главное меню -->
   <div id="menu">
     <h1>Выберите панораму</h1>
+    <button class="menu-btn" onclick="loadPanorama('Спальня.jpg')">Спальня</button>
     <button class="menu-btn" onclick="loadPanorama('Санузел.jpg')">Санузел</button>
-    <button class="menu-btn" onclick="loadPanorama('Ванная.jpg')">Ванная</button>
+    <button class="menu-btn" onclick="loadPanorama('Прихожая.jpg')">Прихожая</button>
+    <button class="menu-btn" onclick="loadPanorama('Кухня-Гостиная.jpg')">Кухня-Гостиная</button>
   </div>
 
   <!-- Контейнер для панорамы -->
@@ -85,7 +87,7 @@
       document.getElementById("back-btn").style.display = "block";
 
       if (viewer) {
-        viewer.destroy(); // Удаляем старый просмотр (если был)
+        viewer.destroy();
       }
 
       viewer = pannellum.viewer('panorama', {
@@ -105,7 +107,7 @@
       document.getElementById("back-btn").style.display = "none";
 
       if (viewer) {
-        viewer.destroy(); // Очищаем просмотр
+        viewer.destroy();
         viewer = null;
       }
     }
